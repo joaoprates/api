@@ -1,4 +1,4 @@
-package prates.desenvolvimento.api.endereco;
+package prates.desenvolvimento.api.domain.endereco;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

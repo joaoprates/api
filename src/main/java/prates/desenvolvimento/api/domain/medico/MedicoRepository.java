@@ -1,4 +1,4 @@
-package prates.desenvolvimento.api.medico;
+package prates.desenvolvimento.api.domain.medico;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

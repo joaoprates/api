@@ -1,6 +1,6 @@
-package prates.desenvolvimento.api.medico;
+package prates.desenvolvimento.api.domain.medico;
 
-import prates.desenvolvimento.api.endereco.Endereco;
+import prates.desenvolvimento.api.domain.endereco.Endereco;
 
 public record DadosDetalhamentoMedico(
     Long id,

@@ -1,4 +1,4 @@
-package prates.desenvolvimento.api.medico;
+package prates.desenvolvimento.api.domain.medico;
 
 public enum Especialidade {
 

@@ -1,4 +1,4 @@
-package prates.desenvolvimento.api.endereco;
+package prates.desenvolvimento.api.domain.endereco;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

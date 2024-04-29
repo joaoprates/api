@@ -1,7 +1,7 @@
 
-package prates.desenvolvimento.api.paciente;
+package prates.desenvolvimento.api.domain.paciente;
 
-import prates.desenvolvimento.api.endereco.Endereco;
+import prates.desenvolvimento.api.domain.endereco.Endereco;
 
 public record DadosDetalhamentoPaciente(
     String nome,

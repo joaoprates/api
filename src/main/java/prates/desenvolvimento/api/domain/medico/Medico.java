@@ -1,11 +1,11 @@
-package prates.desenvolvimento.api.medico;
+package prates.desenvolvimento.api.domain.medico;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import prates.desenvolvimento.api.endereco.Endereco;
+import prates.desenvolvimento.api.domain.endereco.Endereco;
 
 @Table(name = "medicos")
 @Entity(name = "Medico")
