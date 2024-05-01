@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
 import prates.desenvolvimento.api.domain.usuario.DadosAutenticacao;
+import prates.desenvolvimento.api.domain.usuario.Usuario;
+import prates.desenvolvimento.api.infra.security.DadosTokenJWT;
+import prates.desenvolvimento.api.infra.security.TokenService;
 
 @RestController
 @RequestMapping("/login")
@@ -19,10 +22,17 @@ public class AutenticacaoController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @Autowired
+    private TokenService tokenService;
+
     @PostMapping
-    public ResponseEntity efetuarLogin(@RequestBody @Valid DadosAutenticacao dadosAutenticacao) {
-        var token = new UsernamePasswordAuthenticationToken(dadosAutenticacao.login(), dadosAutenticacao.senha());
-        var autentication = authenticationManager.authenticate(token);
-        return ResponseEntity.ok().build();
+    public ResponseEntity efetuarLogin(@RequestBody @Valid DadosAutenticacao dados) {
+        var authenticationToken = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
+        var authentication = authenticationManager.authenticate(authenticationToken);
+    
+        var tokenJWT = tokenService.gerarToken((Usuario) authentication.getPrincipal());
+    
+        return ResponseEntity.ok(new DadosTokenJWT(tokenJWT));
     }
+    
 }
