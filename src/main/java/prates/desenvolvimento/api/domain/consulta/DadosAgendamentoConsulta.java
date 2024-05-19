@@ -1,7 +1,9 @@
 package prates.desenvolvimento.api.domain.consulta;
 
 
-import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters.LocalDateConverter;
+import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
@@ -15,7 +17,8 @@ public record DadosAgendamentoConsulta(
 
         @NotNull
         @Future
-        LocalDateConverter data,
+        @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+        LocalDateTime data,
 
         Especialidade especialidade) {
 }
